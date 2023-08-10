@@ -3,7 +3,7 @@
 <nav class="pcoded-navbar">
   <div class="navbar-wrapper">
     <div class="navbar-brand header-logo">
-      <a href="{% url 'landing_page' %}" class="b-brand">
+      <a href="{% url 'dash' %}" class="b-brand">
         <div class="b-bg">
           <i class="feather icon-trending-up"></i>
         </div>
@@ -16,8 +16,8 @@
         <li class="nav-item pcoded-menu-caption">
           <label>Navigation</label>
         </li>
-        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item {% if 'landing_page' in segment %}active{% endif %}"> 
-          <a href="{% url 'landing_page' %}" class="nav-link ">
+        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item {% if 'dash' in segment %}active{% endif %}"> 
+          <a href="{% url 'dash' %}" class="nav-link ">
             <span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span>
           </a>
         </li>
