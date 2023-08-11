@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django.contrib.auth.decorators import login_exempt
+from rest_framework.permissions import IsAuthenticated
+
 
 
 from api.serializers import *
@@ -17,8 +20,8 @@ except:
     pass
 
 class StudentView(APIView):
-
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         serializer = ProductSerializer(data=request.data)
@@ -86,7 +89,7 @@ class StudentView(APIView):
         }, status=HTTPStatus.OK)
 
 class SchoolView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         serializer = SchoolSerializer(data=request.data)
@@ -154,7 +157,7 @@ class SchoolView(APIView):
         }, status=HTTPStatus.OK)
 
 class SubcountyView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         serializer = SubcountySerializer(data=request.data)
@@ -222,7 +225,7 @@ class SubcountyView(APIView):
         }, status=HTTPStatus.OK)
 
 class CountyView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         serializer = CountySerializer(data=request.data)
